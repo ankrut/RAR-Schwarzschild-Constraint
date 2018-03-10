@@ -5,18 +5,14 @@ AXIS	= lib.require(@lib.model.tov.rar.axes.raw);
 
 % set model parameter
 opts	= struct('xmax', 1E15, 'tau', 1E-16, 'rtau', 1E-4);
-param	= struct('beta0', 1E-6, 'theta0', 30, 'W0', 200);
+param	= struct('beta0', 1E-3, 'theta0', 30, 'W0', 200);
 vm		= struct('param', param, 'options', opts);
 
-% set nlinfit options
-nlOpts = statset('nlinfit');
-nlOpts.FunValCheck	= 'off';
-nlOpts.MaxIter		= 50;
-nlOpts.DerivStep	= 1E-2;
-
 % set condition (Schwarzschild)
-NU0		= -1E-4;					% prediction (between -2E-5 and -20E-5)
-oAnch	= ANCH.velocity_plateau;	% define radius
+NU0		= -1E-1;					% prediction (valid range depends on beta0)
+
+oAnch	= ANCH.interp1.radius(1E6);	% define radius (in R units)
+% oAnch	= ANCH.velocity_plateau;	% define radius (at plateau)
 
 fT		= @(obj) oAnch.map(obj,MAP.temperature);
 fM		= @(obj) oAnch.map(obj,MAP.mass);
