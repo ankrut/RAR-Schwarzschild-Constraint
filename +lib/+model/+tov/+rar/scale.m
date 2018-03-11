@@ -1,28 +1,7 @@
 % load FD scaling
 EXPORT = lib.require(@lib.model.tov.fd.scale);
 
-
-% ANCH = lib.require(@lib.model.tov.rar.anchor);
-% MAP  = lib.require(@lib.model.tov.rar.map);
-% 
-% % SURFACE SCALE
-% fscale = @(obj,ykey) 1/ANCH.surface.map(obj,ykey);
-% 
-% EXPORT.surface.radius = lib.module.ProfileMapping(...
-% 	@(obj) fscale(obj,'radius'),...
-% 	'r_s'...
-% );
-% 
-% EXPORT.surface.mass = lib.module.ProfileMapping(...
-% 	@(obj) fscale(obj,MAP.mass),...
-% 	'M_s'...
-% );
-% 
-% EXPORT.surface.velocity = lib.module.ProfileMapping(...
-% 	@(obj) fscale(obj,MAP.velocity),...
-% 	'v_s'...
-% );
-
+% load package
 MAP  = lib.require(@lib.model.tov.rar.map);
 
 % SURFACE SCALE

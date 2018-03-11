@@ -18,4 +18,7 @@ switch(class(ax))
 		
 	case {'lib.module.ProfileMapping', 'lib.module.ProfileAxis'}
 		X = ax.map(profile);
+		
+	case 'double'
+		X = ax;
 end

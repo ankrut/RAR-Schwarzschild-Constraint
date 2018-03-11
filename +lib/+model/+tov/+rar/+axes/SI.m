@@ -14,6 +14,7 @@ EXPORT.velDisp			= lib.module.ProfileAxis('map',	MAP.velocity_dispersion,	'scale
 EXPORT.speedOfSound		= lib.module.ProfileAxis('map',	MAP.velocitySOS,			'scale', SCALE.SI.velocity,	'label', fLabelUnit);
 EXPORT.acceleration		= lib.module.ProfileAxis('map',	MAP.acceleration,			'scale', SCALE.SI.acceleration,	'label', fLabelUnit);
 
+EXPORT.particleNumber	= lib.module.ProfileAxis('map',	MAP.particleNumber,			'scale', SCALE.SI.particleNumber,	'label', sprintf('$%s$', MAP.particleNumber.label));
 
 EXPORT.potential		= lib.module.ProfileAxis('map',	MAP.potential,		'label', fLabelUnitless);
 EXPORT.compactness		= lib.module.ProfileAxis('map',	MAP.compactness,	'label', fLabelUnitless);
